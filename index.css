@@ -1,0 +1,188 @@
+body, html{margin:0; padding:0; font-family: Arial;}
+*{ box-sizing:border-box;}
+main{
+    height: 100vh;
+    display: grid;
+    gap: 1rem;
+    justify-content: end;
+    padding-right: 1rem;
+    /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr; */
+    align-items: center;
+
+}
+
+.circle{
+    height: 4vw;
+    width: 4vw;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: black;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: .6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.circle:nth-child(1){
+    background:burlywood;
+}
+
+.circle:nth-child(1):hover~.section .left{
+    left:0;
+}
+
+.circle:nth-child(2){
+    background: lightblue;
+}
+
+.circle:nth-child(2):hover ~ .section .right{
+    right:0;
+}
+
+.circle:nth-child(3){
+    background: lightcoral;
+}
+
+.circle:nth-child(3):hover~.section div.bottom{
+    left:0;
+    bottom:0;
+
+}
+
+.circle:nth-child(4){
+    background: lightslategray;
+}
+
+.circle:nth-child(4):hover~.section .top{
+    top:0;
+}
+.circle:nth-child(5){
+    background: limegreen;
+}
+
+.circle:nth-child(5):hover~.section .left{
+    left:0;
+}
+
+.circle:nth-child(5):hover~.section .right{
+    right:0;
+}
+
+.circle:nth-child(5):hover~.section .bottom{
+    bottom:0;
+}
+
+.circle:nth-child(5):hover~.section .top{
+    top:0;
+}
+
+.circle:nth-child(5):hover~.section .all{
+    all:0;
+}
+
+.section div{
+    position: fixed;
+    display: grid;
+    place-items: center;
+    color: white;
+    transition: .5s ease-in-out;
+    z-index:-1;
+}
+
+.section div h1{
+    opacity: 0;
+    
+}
+
+.circle:hover~.section div h1{
+    color: lightslategray;
+    animation: fadeIn .4s .5s forwards;
+
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(-2rem);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+
+.section .left{
+    left:-40vw;
+    top:0;
+    width: 40vw;
+    height: 100vh;
+    background: burlywood;
+}
+
+.section .right{
+    top:0;
+    right:-50vw;
+    width: 50vw;
+    height: 100vh;
+    background: lightblue;
+    z-index: -2;
+    
+}
+
+.section div.bottom{
+    top:100;
+    bottom:-50vh;
+    left:0;
+    width: 100vw;
+    height: 50vh;
+    background: lightcoral;
+    
+    
+}
+
+.section div.top{
+    top:100;
+    top:-50vh;
+    left:0;
+    width: 100vw;
+    height: 50vh;
+    background: lightgrey;
+    z-index: -2;
+}
+
+
+/* 
+section{
+    width: 5vw;
+    height: 5vw;
+    background-color: black;
+    position: fixed;
+    left:1rem;
+    bottom:1rem;
+    border-radius: 50%;
+}
+
+section:hover{
+    background-color: cadetblue;
+    z-index: 2;
+}
+
+section:hover ~ main{
+    left: 0;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    background-color: green;
+    position: fixed;
+    top:0;
+    left: 100vw;
+    transition: .3s ease-in-out;
+
+}
+ */
